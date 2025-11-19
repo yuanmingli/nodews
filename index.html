@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Network - Protect Earth</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>塔罗牌探索之旅</title>
     <style>
         * {
             margin: 0;
@@ -13,710 +12,540 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        :root {
-            --primary: #2e7d32;
-            --secondary: #4caf50;
-            --accent: #8bc34a;
-            --light: #e8f5e9;
-            --dark: #1b5e20;
-            --text: #333333;
-            --white: #ffffff;
-        }
-
         body {
-            background-color: var(--light);
-            color: var(--text);
+            background-color: #0f0c1d;
+            color: #e6e6e6;
             line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(28, 25, 60, 0.8) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(40, 30, 80, 0.6) 0%, transparent 20%);
+            min-height: 100vh;
         }
 
         header {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: var(--white);
-            padding: 1rem 0;
-            position: sticky;
+            background: linear-gradient(135deg, #1a1635 0%, #2d2257 100%);
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%239C92AC' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
         }
 
         .logo {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #c19bf5, #9a7fdb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 15px rgba(156, 77, 255, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #b8a9d6;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav {
             display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.8rem;
-            font-weight: 700;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            position: relative;
+            z-index: 1;
         }
 
-        .logo i {
-            font-size: 2rem;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 2rem;
-        }
-
-        nav ul li a {
-            color: var(--white);
+        nav a {
+            color: #d4c4f7;
             text-decoration: none;
-            font-weight: 500;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
             transition: all 0.3s ease;
-            padding: 0.5rem 0;
+            border: 1px solid #4a3a6e;
+        }
+
+        nav a:hover {
+            background-color: #4a3a6e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(26, 22, 53, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .intro h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: #c19bf5;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            color: #d0c5e8;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tarot-card {
+            background: linear-gradient(145deg, #1e1a3a, #2a2150);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            height: 450px;
+            perspective: 1000px;
+        }
+
+        .tarot-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .tarot-card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+        }
+
+        .card-front {
+            background: linear-gradient(135deg, #2d2257, #1a1635);
+            color: white;
+        }
+
+        .card-back {
+            background: linear-gradient(135deg, #1a1635, #2d2257);
+            color: white;
+            transform: rotateY(180deg);
+            text-align: left;
+            overflow-y: auto;
+        }
+
+        .card-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: #c19bf5;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #e6e6e6;
+        }
+
+        .card-number {
+            font-size: 0.9rem;
+            color: #b8a9d6;
+            margin-bottom: 1rem;
+        }
+
+        .card-meaning {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #d0c5e8;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin: 3rem 0 2rem;
+            color: #c19bf5;
             position: relative;
         }
 
-        nav ul li a:hover {
-            color: var(--accent);
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #c19bf5, transparent);
+            margin: 0.5rem auto;
         }
 
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--accent);
-            transition: width 0.3s ease;
+        .history {
+            background: rgba(26, 22, 53, 0.7);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        nav ul li a:hover::after {
-            width: 100%;
+        .history h3 {
+            color: #c19bf5;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
 
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            align-items: center;
+        .history p {
+            margin-bottom: 1rem;
+            color: #d0c5e8;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1a1635 0%, #2d2257 100%);
             text-align: center;
-            color: var(--white);
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .hero-content {
+        .footer-content {
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: var(--white);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn:hover {
-            background-color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-        }
-
-        section {
-            padding: 5rem 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--accent);
-            border-radius: 2px;
-        }
-
-        .section-title p {
-            color: var(--text);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-img {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .about-img:hover img {
-            transform: scale(1.05);
-        }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 2rem 1rem;
-            background-color: var(--white);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .stat-item i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .stat-item h3 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-item p {
-            color: var(--text);
-        }
-
-        .initiatives {
-            background-color: var(--white);
-        }
-
-        .initiatives-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .initiative-card {
-            background-color: var(--light);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .initiative-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .initiative-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .initiative-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .initiative-card:hover .initiative-img img {
-            transform: scale(1.1);
-        }
-
-        .initiative-content {
-            padding: 1.5rem;
-        }
-
-        .initiative-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .initiative-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        .cta {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: var(--white);
-            text-align: center;
-            padding: 5rem 0;
-        }
-
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta .btn {
-            background-color: var(--white);
-            color: var(--primary);
-        }
-
-        .cta .btn:hover {
-            background-color: var(--accent);
-            color: var(--white);
-        }
-
-        footer {
-            background-color: var(--dark);
-            color: var(--white);
-            padding: 3rem 0 1rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--accent);
-        }
-
-        .footer-column p {
-            margin-bottom: 1rem;
-        }
-
         .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-links li a {
-            color: var(--light);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-links li a:hover {
-            color: var(--accent);
-            padding-left: 5px;
-        }
-
-        .social-links {
             display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: var(--white);
-            text-decoration: none;
-            transition: all 0.3s ease;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
         }
 
-        .social-links a:hover {
-            background-color: var(--accent);
-            transform: translateY(-5px);
+        .footer-links a {
+            color: #b8a9d6;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #c19bf5;
         }
 
         .copyright {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .mobile-menu {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        @media (max-width: 992px) {
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .initiatives-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            color: #8a7ca8;
+            font-size: 0.9rem;
+            margin-top: 1.5rem;
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
+            .logo {
+                font-size: 2.2rem;
             }
             
-            .hero p {
-                font-size: 1.1rem;
+            .card-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
             
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary);
-                flex-direction: column;
-                padding: 1rem 0;
-                text-align: center;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            }
-            
-            nav ul.active {
-                display: flex;
-            }
-            
-            nav ul li {
-                margin: 0;
-                padding: 0.8rem 0;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .initiatives-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats {
-                grid-template-columns: 1fr;
+            .tarot-card {
+                height: 400px;
             }
         }
 
-        /* Animation for stats counter */
-        .counter {
-            transition: all 0.5s ease;
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav a {
+                width: 80%;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="container nav-container">
-            <div class="logo">
-                <i class="fas fa-seedling"></i>
-                <span>Green Network</span>
-            </div>
-            <nav>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#initiatives">Initiatives</a></li>
-                    <li><a href="#get-involved">Get Involved</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1 class="logo">塔罗牌探索之旅</h1>
+        <p class="tagline">揭开命运的神秘面纱，探索内心的智慧</p>
+        <nav>
+            <a href="#major-arcana">大阿卡纳</a>
+            <a href="#minor-arcana">小阿卡纳</a>
+            <a href="#history">塔罗历史</a>
+            <a href="#readings">牌阵解读</a>
+            <a href="#resources">学习资源</a>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container hero-content">
-            <h1>Protect Our Planet, Preserve Our Future</h1>
-            <p>Join the global movement to create a sustainable world through conservation, education, and community action.</p>
-            <a href="#get-involved" class="btn">Join Our Network</a>
-        </div>
-    </section>
+    <div class="container">
+        <section class="intro">
+            <h2>欢迎来到塔罗牌的神秘世界</h2>
+            <p>塔罗牌是一种古老的占卜工具，由78张牌组成，分为大阿卡纳和小阿卡纳。每张牌都蕴含着丰富的象征意义，帮助我们探索内心世界、理解生活挑战并寻找人生方向。</p>
+            <p>无论你是塔罗新手还是资深爱好者，这里都能为你提供有价值的见解和指导。</p>
+        </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Green Network</h2>
-                <p>We are a global community dedicated to environmental protection and sustainable development.</p>
+        <h2 class="section-title" id="major-arcana">大阿卡纳牌</h2>
+        <div class="card-grid">
+            <div class="tarot-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-icon">♔</div>
+                        <h3 class="card-title">愚者</h3>
+                        <p class="card-number">0号牌</p>
+                        <p>点击卡片查看含义</p>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="card-title">愚者</h3>
+                        <p class="card-meaning">
+                            愚者代表新的开始、冒险精神和无限可能性。这张牌鼓励你追随内心的召唤，勇敢踏上未知的旅程，即使前方充满不确定性。
+                        </p>
+                        <p class="card-meaning">
+                            <strong>正位含义：</strong>新的开始、自由精神、冒险、天真、自发性
+                        </p>
+                        <p class="card-meaning">
+                            <strong>逆位含义：</strong>鲁莽、不负责任、优柔寡断、冒险失败
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Team planting trees">
-                </div>
-                <div class="about-text">
-                    <h3>Our Mission</h3>
-                    <p>Green Network is committed to creating a sustainable future by protecting natural ecosystems, promoting renewable energy, and empowering communities to take environmental action.</p>
-                    <p>Founded in 2010, we've grown from a small grassroots organization to an international network with over 50,000 members across 120 countries.</p>
-                    <p>Our approach combines scientific research, community engagement, and policy advocacy to address the most pressing environmental challenges of our time.</p>
-                    <a href="#" class="btn">Learn More</a>
+
+            <div class="tarot-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-icon">♕</div>
+                        <h3 class="card-title">女祭司</h3>
+                        <p class="card-number">II号牌</p>
+                        <p>点击卡片查看含义</p>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="card-title">女祭司</h3>
+                        <p class="card-meaning">
+                            女祭司代表直觉、潜意识知识和神秘智慧。她坐在黑白柱子之间，象征着平衡与对立面的统一。
+                        </p>
+                        <p class="card-meaning">
+                            <strong>正位含义：</strong>直觉、潜意识、神秘、内在智慧、耐心
+                        </p>
+                        <p class="card-meaning">
+                            <strong>逆位含义：</strong>隐藏的知识、压抑的情绪、秘密、缺乏耐心
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="stats">
-                <div class="stat-item">
-                    <i class="fas fa-tree"></i>
-                    <h3 class="counter" data-target="2500000">0</h3>
-                    <p>Trees Planted</p>
+
+            <div class="tarot-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-icon">♖</div>
+                        <h3 class="card-title">战车</h3>
+                        <p class="card-number">VII号牌</p>
+                        <p>点击卡片查看含义</p>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="card-title">战车</h3>
+                        <p class="card-meaning">
+                            战车代表意志力、决心和胜利。这张牌象征着通过自律和控制对立力量来取得成功。
+                        </p>
+                        <p class="card-meaning">
+                            <strong>正位含义：</strong>胜利、意志力、控制、决心、前进
+                        </p>
+                        <p class="card-meaning">
+                            <strong>逆位含义：</strong>缺乏方向、失控、侵略性、障碍
+                        </p>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <i class="fas fa-users"></i>
-                    <h3 class="counter" data-target="50000">0</h3>
-                    <p>Active Members</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-globe-americas"></i>
-                    <h3 class="counter" data-target="120">0</h3>
-                    <p>Countries Reached</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-recycle"></i>
-                    <h3 class="counter" data-target="1500">0</h3>
-                    <p>Cleanup Projects</p>
+            </div>
+
+            <div class="tarot-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-icon">♗</div>
+                        <h3 class="card-title">力量</h3>
+                        <p class="card-number">VIII号牌</p>
+                        <p>点击卡片查看含义</p>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="card-title">力量</h3>
+                        <p class="card-meaning">
+                            力量牌代表内在力量、勇气和怜悯。它描绘了一个温柔地驯服狮子的女性，象征着以柔和方式驾驭原始力量。
+                        </p>
+                        <p class="card-meaning">
+                            <strong>正位含义：</strong>勇气、自信、耐心、控制、同情
+                        </p>
+                        <p class="card-meaning">
+                            <strong>逆位含义：</strong>软弱、自我怀疑、滥用权力、恐惧
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Initiatives Section -->
-    <section class="initiatives" id="initiatives">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Initiatives</h2>
-                <p>Discover the key programs and projects we're implementing to protect our planet.</p>
+        <h2 class="section-title" id="minor-arcana">小阿卡纳牌</h2>
+        <div class="card-grid">
+            <div class="tarot-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-icon">🜂</div>
+                        <h3 class="card-title">权杖ACE</h3>
+                        <p class="card-number">火元素</p>
+                        <p>点击卡片查看含义</p>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="card-title">权杖ACE</h3>
+                        <p class="card-meaning">
+                            权杖ACE代表新的开始、创造力和灵感。它象征着新项目、新业务或新冒险的开始，充满潜力和能量。
+                        </p>
+                        <p class="card-meaning">
+                            <strong>正位含义：</strong>新开始、创造力、灵感、潜力、能量
+                        </p>
+                        <p class="card-meaning">
+                            <strong>逆位含义：</strong>延迟、虚假开始、未实现的潜力、缺乏方向
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="initiatives-grid">
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://dialogue.earth/content/uploads/2021/04/lessons-from-the-rush-to-reforest-china-dialogue-2400x1599.jpg" alt="Reforestation">
+
+            <div class="tarot-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-icon">🜁</div>
+                        <h3 class="card-title">圣杯六</h3>
+                        <p class="card-number">水元素</p>
+                        <p>点击卡片查看含义</p>
                     </div>
-                    <div class="initiative-content">
-                        <h3>Global Reforestation</h3>
-                        <p>Planting millions of trees worldwide to restore ecosystems, combat climate change, and protect biodiversity.</p>
-                        <a href="#" class="btn">Learn More</a>
+                    <div class="card-back">
+                        <h3 class="card-title">圣杯六</h3>
+                        <p class="card-meaning">
+                            圣杯六代表怀旧、童年记忆和单纯快乐。这张牌常常与过去的人、地方或事件重新联系有关。
+                        </p>
+                        <p class="card-meaning">
+                            <strong>正位含义：</strong>怀旧、童年、单纯快乐、馈赠、回忆
+                        </p>
+                        <p class="card-meaning">
+                            <strong>逆位含义：</strong>活在过去、无法前进、不切实际的期望
+                        </p>
                     </div>
                 </div>
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Ocean Conservation">
+            </div>
+
+            <div class="tarot-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-icon">🜃</div>
+                        <h3 class="card-title">星币十</h3>
+                        <p class="card-number">土元素</p>
+                        <p>点击卡片查看含义</p>
                     </div>
-                    <div class="initiative-content">
-                        <h3>Ocean Conservation</h3>
-                        <p>Protecting marine ecosystems, reducing plastic pollution, and promoting sustainable fishing practices.</p>
-                        <a href="#" class="btn">Learn More</a>
+                    <div class="card-back">
+                        <h3 class="card-title">星币十</h3>
+                        <p class="card-meaning">
+                            星币十代表财富、遗产和家庭稳定。这张牌象征着物质上的成功、财务安全和家族传承。
+                        </p>
+                        <p class="card-meaning">
+                            <strong>正位含义：</strong>财富、遗产、家庭、稳定、传承
+                        </p>
+                        <p class="card-meaning">
+                            <strong>逆位含义：</strong>财务问题、家庭冲突、不稳定、失去遗产
+                        </p>
                     </div>
                 </div>
-                <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Renewable Energy">
+            </div>
+
+            <div class="tarot-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-icon">🜄</div>
+                        <h3 class="card-title">宝剑骑士</h3>
+                        <p class="card-number">风元素</p>
+                        <p>点击卡片查看含义</p>
                     </div>
-                    <div class="initiative-content">
-                        <h3>Renewable Energy</h3>
-                        <p>Promoting solar, wind, and other clean energy sources to reduce dependence on fossil fuels.</p>
-                        <a href="#" class="btn">Learn More</a>
+                    <div class="card-back">
+                        <h3 class="card-title">宝剑骑士</h3>
+                        <p class="card-meaning">
+                            宝剑骑士代表思想迅速、行动果断和锐利智慧。这张牌象征着以逻辑和理性方式快速前进。
+                        </p>
+                        <p class="card-meaning">
+                            <strong>正位含义：</strong>思想迅速、果断、锐利、逻辑、雄心
+                        </p>
+                        <p class="card-meaning">
+                            <strong>逆位含义：</strong>冲动、鲁莽、侵略性、缺乏计划
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="cta" id="get-involved">
-        <div class="container">
-            <h2>Join Our Global Movement</h2>
-            <p>Together, we can create a sustainable future for generations to come. Every action counts, no matter how small.</p>
-            <a href="#" class="btn">Become a Member</a>
-        </div>
-    </section>
+        <section class="history" id="history">
+            <h2>塔罗牌的历史</h2>
+            <p>塔罗牌的历史可以追溯到15世纪的意大利，最初作为纸牌游戏使用。直到18世纪，塔罗牌才开始与神秘学和占卜联系起来。</p>
+            <p>现代塔罗牌最常见的版本是莱德-韦特塔罗牌，由亚瑟·爱德华·韦特设计，帕梅拉·科尔曼·史密斯绘制，于1910年出版。这套牌以其丰富的象征意义和易于理解的图像而闻名。</p>
+            <p>塔罗牌由78张牌组成，分为两个主要部分：</p>
+            <ul>
+                <li><strong>大阿卡纳（22张）：</strong>代表人生的重要主题和灵性旅程</li>
+                <li><strong>小阿卡纳（56张）：</strong>代表日常生活中的事件和挑战，分为四个花色：权杖、圣杯、宝剑和星币</li>
+            </ul>
+            <p>如今，塔罗牌不仅用于占卜，还成为自我反思、心理探索和创造性思维的工具。</p>
+        </section>
+    </div>
 
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Green Network</h3>
-                    <p>We are dedicated to protecting our planet through collaborative action, education, and sustainable solutions.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#initiatives">Initiatives</a></li>
-                        <li><a href="#get-involved">Get Involved</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Our Programs</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Reforestation</a></li>
-                        <li><a href="#">Ocean Cleanup</a></li>
-                        <li><a href="#">Wildlife Protection</a></li>
-                        <li><a href="#">Climate Education</a></li>
-                        <li><a href="#">Sustainable Agriculture</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Copper Creek Drive, New York</p>
-                    <p><i class="fas fa-phone"></i> +1 (312) 171-0771</p>
-                    <p><i class="fas fa-envelope"></i> support@greennetwork.org</p>
-                </div>
+    <footer>
+        <div class="footer-content">
+            <h3>塔罗牌探索之旅</h3>
+            <p>探索内心智慧，照亮人生路径</p>
+            <div class="footer-links">
+                <a href="#major-arcana">大阿卡纳</a>
+                <a href="#minor-arcana">小阿卡纳</a>
+                <a href="#history">塔罗历史</a>
+                <a href="#readings">牌阵解读</a>
+                <a href="#resources">学习资源</a>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 Green Network. All rights reserved.</p>
-            </div>
+            <p class="copyright">© 2023 塔罗牌探索之旅 | 仅供娱乐和教育目的</p>
         </div>
     </footer>
-
-    <script>
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('active');
-        });
-
-        // Counter Animation
-        function animateCounters() {
-            const counters = document.querySelectorAll('.counter');
-            const speed = 200; // The lower the slower
-            
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                
-                const inc = target / speed;
-                
-                if(count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(animateCounters, 1);
-                } else {
-                    counter.innerText = target;
-                }
-            });
-        }
-
-        // Initialize counters when page loads
-        window.addEventListener('load', animateCounters);
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    document.querySelector('nav ul').classList.remove('active');
-                }
-            });
-        });
-    </script>
 </body>
-
 </html>
